@@ -27,6 +27,9 @@
     <NoWarn>$(NoWarn);NU5125</NoWarn>
     <!--<BinDirectory>$(MSBuildThisFileDirectory)\..\artifacts\bin</BinDirectory>-->
 
+    <!-- do not need framework packages -->
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+
     <!-- Disable a VS-specific target that is failing when building this csproj -->
     <GenerateDependencyFile>false</GenerateDependencyFile>
 
@@ -74,6 +77,7 @@
       <ProjectReference>
         <OutputItemType>TfmSpecificPackageFile</OutputItemType>
         <Targets>GetPackageContent</Targets>
+        <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       </ProjectReference>
     </ItemGroup>
   </Target>
